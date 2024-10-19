@@ -1,0 +1,66 @@
+{
+    "talarin": {
+        "navbar": {
+            "login": "ورود",
+            "register_business": "ثبت کسب و کار",
+            "Art": "هنر",
+            "Indoor":"عکاسی داخل سالن",
+            "beauty": "زیبایی",
+            "Music": "موسیقی",
+            "Band": "باند",
+            "Live": "اجراهای زنده",
+            "Photo": "عکاسی",
+            "Video": "فیلمبرداری",
+            "Studio": "آتیله عکاس",
+            "Catering": "کترینگ و غذا اماده",
+            "Food": "کترینگ و غذا اماده",
+            "Cake": "کیک و شیرینی",
+            "Drinks": "نوشیدنی‌ها",
+            "Decor": "دکوراسیون",
+            "Flowers": "گل‌آرایی",
+            "Lights": "نورپردازی",
+            "Halls": "تالارها",
+            "Hall": "تالار",
+            "Garden": "باغ تالار",
+            "Engagement": "سالن عقد",
+            "Hotel": "هتل تالار",
+            "Mansion": "عمارت",
+            "Beauty": "زیبایی",
+            "WomenSalon": "آرایشگاه زنانه",
+            "MenSalon": "آرایشگاه مردانه",
+            "Nails": "خدمات ناخن",
+            "Boutique": "مزون",
+            "Transport": "حمل و نقل عروس و دامان",
+            "Gifts": "کارت و هدایا",
+            "Counseling": "مشاوره روانشناسی",
+            "Dance": "آموزش رقص",
+            "Consulting": "مشاوره",
+            "EventPlan": "مشاوره برنامه‌ریزی مراسم",
+            "Finance": "مشاوره مالی",
+            "Psychology": "مشاوره روانشناسی",
+            "Services": "سرویس ها",
+            "ServiceSelect": "مشاوره انتخاب خدمات"
+        },
+        "categories": {
+            "wedding_venues": "مکان‌های عروسی",
+            "wedding_photographers": "عکاسان عروسی",
+            "wedding_catering": "پذیرایی از مراسم عروسی",
+            "bridal_dresses": "لباس عروس"
+        },
+        "BestFlowers":{
+            "BestFlowers": "بهترین گلسراها",
+            "Flowers": " گلسراها",
+            "ShowAll": "نمایش همه",
+            "talarinflowes": "گل‌های تالارین",
+            "Variety": "تنوع گل‌ها",
+            "Units": "عدد",
+            "Experience": "تجربه و سابقه",
+            "Years": "سال",
+            "FreshBouquets": "دسته گل‌های تازه",
+            "SpecialOffer": "پیشنهاد ویژه",
+            "Discount": "تخفیف"
+
+        }
+
+    }
+}

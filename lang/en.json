@@ -1,0 +1,40 @@
+{
+    "talarin": {
+        "navbar": {
+            "art": "هنر",
+            "Indoor": "indoor",
+            "music": "موسیقی",
+            "film": "فیلم",
+            "live_performances": "اجراهای زنده",
+            "catering": "خدمات پذیرایی",
+            "special_menus": "منوهای ویژه",
+            "cakes_and_pastries": "کیک‌ها و شیرینی‌ها",
+            "beverages": "نوشیدنی‌ها",
+            "decorations": "تزئینات",
+            "decoration": "تزئین",
+            "flower_arrangement": "ترتیب گل",
+            "lighting": "نورپردازی",
+            "venues": "مکان‌ها",
+            "ceremony_halls": "سالن‌های مراسم",
+            "gardens_and_outdoor_spaces": "باغ‌ها و فضاهای باز",
+            "hotels": "هتل‌ها",
+            "beauty": "زیبایی",
+            "makeup_and_styling": "آرایش و استایل",
+            "nail_services": "خدمات ناخن",
+            "beauty_consultation": "مشاوره زیبایی",
+            "consultation": "مشاوره",
+            "event_planning_consultation": "مشاوره برنامه‌ریزی رویداد",
+            "financial_consultation": "مشاوره مالی",
+            "psychological_consultation": "مشاوره روانشناسی",
+            "service_selection_consultation": "مشاوره انتخاب خدمات",
+            "online_services": "خدمات آنلاین",
+            "special_offers": "پیشنهادات ویژه"
+        },
+        "categories": {
+            "wedding_venues": "مکان‌های عروسی",
+            "wedding_photographers": "عکاسان عروسی",
+            "wedding_catering": "پذیرایی از مراسم عروسی",
+            "bridal_dresses": "لباس عروس"
+        }
+    }
+}
