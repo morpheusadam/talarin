@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 @section('content')
     <!-- Hero-->
     <section class="container-fluid my-5 pt-5 pb-lg-4 px-xxl-4">

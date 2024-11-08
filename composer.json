@@ -11,6 +11,8 @@
         "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
+        "mckenziearts/laravel-notify": "^2.5",
+        "php-flasher/flasher-laravel": "^2.1",
         "qirolab/laravel-themer": "^2.3"
     },
     "require-dev": {

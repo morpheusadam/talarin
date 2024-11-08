@@ -1,4 +1,5 @@
-@php
+<div>
+    @php
 $halls = [
     [
         'name' => 'تالار الماس تهران',
@@ -191,3 +192,5 @@ $halls = [
         </div>
     </div>
 </section>
+
+</div>

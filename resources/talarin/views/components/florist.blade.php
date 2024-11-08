@@ -1,4 +1,5 @@
-<!-- Banner + Where to eat-->
+<div>
+    <!-- Banner + Where to eat-->
 <div class="container mb-5 pb-lg-4">
     <div class="row">
 
@@ -92,4 +93,6 @@
             </div>
         </div>
     </div>
+</div>
+
 </div>

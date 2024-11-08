@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Pages\Auth;
+use App\Livewire\Pages\Register;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,8 +11,8 @@ Route::get('/test', function () {
      return view('index2');
 });
 Route::get('/catalog', function () {
-     return view('pages.catalog');
+     return view(view: 'pages.catalog');
 });
 
-// Corrected route for Livewire component
-//Route::get('test', \App\Http\Livewire\SearchUsers::class);
+Route::get('/auth', Auth::class);
+
