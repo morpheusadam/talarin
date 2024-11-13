@@ -26,10 +26,10 @@ return [
     |
     */
 
-    'view_path' => resource_path(path: env('THEME') .'/views'),
+    'view_path' => resource_path('views'),
 
     /*
-    |--------------------------------------------------------------------------
+    |---------------------------------------------------------------------------
     | Layout
     |---------------------------------------------------------------------------
     | The view that will be used as the layout when rendering a single component

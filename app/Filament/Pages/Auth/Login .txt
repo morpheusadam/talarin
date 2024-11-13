@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Filament\Pages\Auth;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
+use Filament\Pages\Auth\Login as BaseAuth;
+use Illuminate\Support\Facades\Auth;
+use Filament\Notifications\Notification;
+
+class Login extends BaseAuth
+{
+    public function form(Form $form): Form
+    {
+        return $form
+            ->schema([
+                $this->getEmailFormComponent(),
+                $this->getPasswordFormComponent(),
+                $this->getRememberFormComponent(),
+            ])
+            ->statePath('data');
+    }
+
+    protected function getLoginFormComponent(): TextInput // Change return type to TextInput
+    {
+        return TextInput::make('login')
+            ->label('Login')
+            ->required()
+            ->autocomplete()
+            ->autofocus()
+            ->extraInputAttributes(['tabindex' => 1]);
+    }
+}

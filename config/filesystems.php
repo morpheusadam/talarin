@@ -12,6 +12,7 @@ return [
     | based disks are available to your application for file storage.
     |
     */
+    'path' => 'dashboard',
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
