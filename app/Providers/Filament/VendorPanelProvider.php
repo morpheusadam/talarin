@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Auth\Login;
+use App\Filament\Pages\Auth\Register;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -24,6 +26,12 @@ class VendorPanelProvider extends PanelProvider
     {
         return $panel
             ->id('vendor')
+            ->login(action: Login::class)
+            ->registration(action: Register::class)
+            ->path('admin')
+            ->login(Login::class)
+            ->passwordReset()
+            ->profile()
             ->path('vendor')
             ->colors([
                 'primary' => Color::Amber,

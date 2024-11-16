@@ -27,9 +27,10 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
+            ->login(action: Login::class)
+            ->registration(action: Register::class)
             ->path('admin')
             ->login(Login::class)
-            ->registration(Register::class)
             ->passwordReset()
             ->profile()
             ->colors([
