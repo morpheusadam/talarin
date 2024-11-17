@@ -21,24 +21,25 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class VendorPanelProvider extends PanelProvider
+class BluePanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-        ->id('vendor')
-        ->path('vendor')
-        ->registration(action: Register::class)
-        ->login(Login::class)
+            ->id('blue')
+            ->path('blue')
+            ->domain('blue.' . env( 'APP_URL')) 
+            ->registration(action: VendorRegister::class)
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Vendor/Resources'), for: 'App\\Filament\\Vendor\\Resources')
-            ->discoverPages(in: app_path('Filament/Vendor/Pages'), for: 'App\\Filament\\Vendor\\Pages')
+            ->discoverResources(in: app_path('Filament/Blue/Resources'), for: 'App\\Filament\\Blue\\Resources')
+            ->discoverPages(in: app_path('Filament/Blue/Pages'), for: 'App\\Filament\\Blue\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Vendor/Widgets'), for: 'App\\Filament\\Vendor\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Blue/Widgets'), for: 'App\\Filament\\Blue\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,

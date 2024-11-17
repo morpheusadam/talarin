@@ -2,12 +2,12 @@
 // Models/Auth/app/Models/User.php
 
 namespace App\Models;
-use Filament\Panel;
 
+use Filament\Panel;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use App\Models\Role; // Ensure this import is correct
 
 class User extends Authenticatable
@@ -18,56 +18,76 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id', // Ensure this is provided or nullable
         'company_name',
         'website',
         'address',
         'logo',
-    ];
-
-    protected $hidden = ['password', 'remember_token'];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+        'is_active',
     ];
 
     /**
-     * The roles that belong to the user.
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array<int, string>
      */
-    public function roles(): BelongsToMany
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'is_active' => 'boolean',
+    ];
+
+    /**
+     * Get the role associated with the user.
+     */
+    public function role(): BelongsTo
     {
-        return $this->belongsToMany(Role::class, 'user_roles');
+        return $this->belongsTo(Role::class);
     }
 
     /**
-     * Check if the user has a specific role.
+     * Get the role ID by role name.
      *
      * @param string $roleName
-     * @return bool
+     * @return int|null
      */
-    public function hasRole(string $roleName): bool
+    public static function getRoleIdByName(string $roleName): ?int
     {
-        return $this->roles()
-            ->where('role_name', $roleName)
-            ->exists();
+        $role = Role::where('name', $roleName)->first();
+        return $role ? $role->id : null;
     }
 
     public function isAdmin(): bool
     {
-        return $this->hasRole('admin');
+        return $this->role && $this->role->name === 'admin';
     }
 
-    public function isVendor(): bool
-    {
-        return $this->hasRole('vendor');
-    }
-
+    /**
+     * Check if the user is a client.
+     *
+     * @return bool
+     */
     public function isClient(): bool
     {
-        return $this->hasRole('client');
+        return $this->role && $this->role->name === 'client';
     }
-    public function canAccessPanel(Panel $panel): bool
+
+    /**
+     * Check if the user is a vendor.
+     *
+     * @return bool
+     */
+    public function isVendor(): bool
     {
-        return $panel->getId() === 'admin' && $this->isAdmin();
+        return $this->role && $this->role->name === 'vendor';
     }
 }
-

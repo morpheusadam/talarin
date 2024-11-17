@@ -2,24 +2,39 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-// use Models\Auth\Database\Factories\RoleFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Role extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['role_name', 'description'];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'name',
+        'description',
+    ];
 
-    public function permissions()
+    /**
+     * Get the users for the role.
+     */
+    public function users(): HasMany
     {
-        return $this->belongsToMany(Permission::class, 'role_permissions');
+        return $this->hasMany(User::class);
     }
 
-    public function users()
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \App\ModelsDatabase\Factories\RoleFactory
+     */
+    protected static function newFactory()
     {
-        return $this->belongsToMany(User::class, 'user_roles');
+        return \App\ModelsDatabase\Factories\RoleFactory::new();
     }
 }

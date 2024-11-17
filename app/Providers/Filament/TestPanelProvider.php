@@ -4,7 +4,6 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\Auth\Login;
 use App\Filament\Pages\Auth\Register;
-use App\Filament\Pages\Auth\VendorRegister;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -21,24 +20,24 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
-class VendorPanelProvider extends PanelProvider
+class TestPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-        ->id('vendor')
-        ->path('vendor')
-        ->registration(action: Register::class)
-        ->login(Login::class)
+            ->id('test')
+            ->path('test')
+            ->registration(action: Register::class)
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->discoverResources(in: app_path('Filament/Vendor/Resources'), for: 'App\\Filament\\Vendor\\Resources')
-            ->discoverPages(in: app_path('Filament/Vendor/Pages'), for: 'App\\Filament\\Vendor\\Pages')
+            ->discoverResources(in: app_path('Filament/Test/Resources'), for: 'App\\Filament\\Test\\Resources')
+            ->discoverPages(in: app_path('Filament/Test/Pages'), for: 'App\\Filament\\Test\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Vendor/Widgets'), for: 'App\\Filament\\Vendor\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Test/Widgets'), for: 'App\\Filament\\Test\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
