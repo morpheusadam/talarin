@@ -20,21 +20,5 @@ class Role extends Model
         'description',
     ];
 
-    /**
-     * Get the users for the role.
-     */
-    public function users(): HasMany
-    {
-        return $this->hasMany(User::class);
-    }
-
-    /**
-     * Create a new factory instance for the model.
-     *
-     * @return \App\ModelsDatabase\Factories\RoleFactory
-     */
-    protected static function newFactory()
-    {
-        return \App\ModelsDatabase\Factories\RoleFactory::new();
-    }
-}
+  
+  }

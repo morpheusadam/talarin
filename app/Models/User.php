@@ -49,45 +49,5 @@ class User extends Authenticatable
     /**
      * Get the role associated with the user.
      */
-    public function role(): BelongsTo
-    {
-        return $this->belongsTo(Role::class);
-    }
-
-    /**
-     * Get the role ID by role name.
-     *
-     * @param string $roleName
-     * @return int|null
-     */
-    public static function getRoleIdByName(string $roleName): ?int
-    {
-        $role = Role::where('name', $roleName)->first();
-        return $role ? $role->id : null;
-    }
-
-    public function isAdmin(): bool
-    {
-        return $this->role && $this->role->name === 'admin';
-    }
-
-    /**
-     * Check if the user is a client.
-     *
-     * @return bool
-     */
-    public function isClient(): bool
-    {
-        return $this->role && $this->role->name === 'client';
-    }
-
-    /**
-     * Check if the user is a vendor.
-     *
-     * @return bool
-     */
-    public function isVendor(): bool
-    {
-        return $this->role && $this->role->name === 'vendor';
-    }
+   
 }
